@@ -12,14 +12,21 @@ pulls](https://img.shields.io/github/issues-pr/ELTEbioinformatics/muleaData)](ht
 
 <!-- badges: end -->
 
-`muleaData` is an ExperimentHubData Bioconductor package for the `mulea`
-R package. `mulea` is a comprehensive overrepresentation and functional
-enrichment analyser R package. Here we provide ontologies (gene and
-protein sets) in a standardised *GMT* (Gene Matrix Transposed) format
-for 27 different model organisms, ranging from *Escherichia coli* to
-human, all acquired from publicly available data sources. The *GMT*
-files are provided with multiple gene and protein identifiers such as
-*UniProt* protein IDs, *Entrez*, *Gene Symbol*, and *Ensembl* gene IDs.
+`muleaData` is an ExperimentHubData Bioconductor package for the
+[`mulea`](https://github.com/ELTEbioinformatics/mulea) R package.
+`mulea` is a comprehensive overrepresentation and functional enrichment
+analyser R package which reads ontologies (gene and protein sets) in a
+standardised *GMT* (Gene Matrix Transposed) format. We provide these
+*GMT* files for 27 different model organisms, ranging from *Escherichia
+coli* to human, all acquired from publicly available data sources. The
+*GMT* files are provided with multiple gene and protein identifiers such
+as *UniProt* protein IDs, *Entrez*, *Gene Symbol*, and *Ensembl* gene
+IDs. The GMT files and the scripts we applied to create them are
+available at the
+[GMT_files_for_mulea](https://github.com/ELTEbioinformatics/GMT_files_for_mulea)
+repository. For the `muleaData` we read these *GMT* files with the
+`mulea::read_gmt()` functuion and saved it to .rds files with the
+standard R `saveRDS()` function.
 
 List of species `muleaData` covers:
 

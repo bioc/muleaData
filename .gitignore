@@ -3,4 +3,5 @@
 .RData
 .Ruserdata
 .Rbuildignore
+muleaData.Rproj
 inst/doc
