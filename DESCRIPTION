@@ -1,0 +1,25 @@
+Package: muleaData
+Title: Genes Sets for Functional Enrichment Analysis with the 'mulea' R Package
+Version: 0.99.0
+Date: 2023-11-20
+Authors@R: c(
+              person("Eszter", "Ari", email = "arieszter@gmail.com", role = c("aut", "cre"),
+                     comment = c(ORCID = "0000-0001-7774-1067")),
+              person("Márton", "Ölbei", role = c("aut"),
+                     comment = c(ORCID = "0000-0002-4903-6237")),
+              person("Lejla", "Gul", role = c("aut")),
+              person("Balázs", "Bohár", role = c("aut"),
+                     comment = c(ORCID = "0000-0002-3033-5448")))
+Description: ExperimentHubData package for the 'mulea' comprehensive overrepresentation and functional enrichment analyser R package. Here we provide ontologies (gene sets) in a data.frame for 27 different organisms, ranging from Escherichia coli to human, all acquired from publicly available data sources. Each ontology is provided with multiple gene and protein identifiers.
+License: MIT + file LICENSE
+URL: https://github.com/ELTEbioinformatics/muleaData
+BugReports: https://support.bioconductor.org/tag/muleaData
+biocViews: ExperimentData, ExperimentHub, Arabidopsis_thaliana_Data, Bacillus_subtilis_Data, Caenorhabditis_elegans_Data, Danio_rerio_Data, Drosophila_melanogaster_Data, Escherichia_coli_Data, Homo_sapiens_Data, Pan_troglodytes_Data, Pseudomonas_aeruginosa_Data, Rattus_norvegicus_Data, Saccharomyces_cerevisiae_Data, Staphylococcus_aureus_Data, ChIPSeqData, DNASeqData, ExpressionData, miRNAData
+BiocType: ExperimentData
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

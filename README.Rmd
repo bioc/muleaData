@@ -1,0 +1,128 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>",
+    fig.path = "man/figures/README-",
+    out.width = "100%"
+)
+```
+
+# muleaData
+
+<!-- badges: start -->
+
+[![GitHub issues](https://img.shields.io/github/issues/ELTEbioinformatics/muleaData)](https://github.com/ELTEbioinformatics/muleaData/issues) [![GitHub pulls](https://img.shields.io/github/issues-pr/ELTEbioinformatics/muleaData)](https://github.com/ELTEbioinformatics/muleaData/pulls)
+
+<!-- badges: end -->
+
+`muleaData` is an ExperimentHubData Bioconductor package for the `mulea` R package. `mulea` is a comprehensive overrepresentation and functional enrichment analyser R package. Here we provide ontologies (gene and protein sets) in a standardised *GMT* (Gene Matrix Transposed) format for 27 different model organisms, ranging from *Escherichia coli* to human, all acquired from publicly available data sources. The *GMT* files are provided with multiple gene and protein identifiers such as *UniProt* protein IDs, *Entrez*, *Gene Symbol*, and *Ensembl* gene IDs.
+
+List of species `muleaData` covers:
+
+-   *Arabidopsis thaliana*
+-   *Bacillus subtilis*
+-   *Bacteroides thetaiotaomicron VPI-5482*
+-   *Bifidobacterium longum*
+-   *Bos taurus*
+-   *Caenorhabditis elegans*
+-   *Chlamydomonas reinhardtii*
+-   *Danio rerio*
+-   *Daphnia pulex*
+-   *Dictyostelium discoideum*
+-   *Drosophila melanogaster*
+-   *Drosophila simulans*
+-   *Escherichia coli*
+-   *Gallus gallus*
+-   *Homo sapiens*
+-   *Macaca mulatta*
+-   *Mus musculus*
+-   *Mycobacterium tubercolosis*
+-   *Neurospora crassa*
+-   *Pan troglodytes*
+-   *Rattus norvegicus*
+-   *Saccharomyces cerevisiae*
+-   *Salmonella enterica subsp. enterica serovar Typhimurium str. LT2*
+-   *Schizosaccharomyces pombe*
+-   *Tetrahymena thermophila*
+-   *Xenopus tropicalis*
+-   *Zea mays*
+
+Type, name, link and citation of the databases `muleaData` covers:
+
+|                                     |                                                                                        |                                                                                                                                                                    |                                                                                                                                                                                                |
+|-------------------------------------|:--------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| **Ontology category**               |                                   **Ontology name**                                    |                                                                  **Short description of content**                                                                  |                                                                                         **Reference**                                                                                          |
+| **Gene expression**                 |                          [FlyAtlas](http://www.flyatlas.org/)                          |                                                   Tissue specific expression data for *Drosophila melanogaster*.                                                   |                      Chintapalli,V.R. *et al.* (2007) Using FlyAtlas to identify better *Drosophila melanogaster* models of human disease. *Nat Genet*, **39**, 715–720.                       |
+|                                     |                        [ModEncode](http://data.modencode.org/)                         | Functional characterization (cell line, temporal expression, tissue expression, treatment) of elements for *Caenorhabditis elegans* and *Drosophila melanogaster*. |                The Modencode Consortium *et al.* (2010) Identification of functional elements and regulatory circuits by *Drosophila* modENCODE. *Science*, **330**, 1787–1797.                |
+| **Genomic location**                |                                   Chromosomal Bands                                    |                                                                Location of genes on the chromosome.                                                                |                                                       Martin,F.J. *et al.* (2023) Ensembl 2023. *Nucleic Acids Res,* **51**, D933–D941.                                                        |
+|                                     |                                   Consecutive genes                                    |                                                              *n* consecutive genes on the chromosome.                                                              |                                                                                                                                                                                                |
+| **miRNA regulation**                | [miRTarBase](https://mirtarbase.cuhk.edu.cn/~miRTarBase/miRTarBase_2022/php/index.php) |                                                       Experimentally validated miRNA - target interactions.                                                        |            Huang,H.-Y. et al. (2022) miRTarBase update 2022: an informative resource for experimentally validated miRNA–target interactions. Nucleic Acids Res, **50**, D222–D230.             |
+| **Gene Ontology**                   |                            [GO](https://geneontology.org/)                             |                                            Gene Ontology (GO) categorizes genes into unified categories and attributes.                                            |                                      The Gene Ontology Consortium *et al.* (2023) The Gene Ontology knowledgebase in 2023. *Genetics*, **224**, iyad031.                                       |
+| **Pathway**                         |                   [Pathway Commons](https://www.pathwaycommons.org/)                   |                                                       Collection of biological pathway and interaction data.                                                       |                    Rodchenkov,I. et al. (2020) Pathway Commons 2019 Update: integration, analysis and exploration of pathway data. *Nucleic Acids Res*, **48**, D489–D497.                     |
+|                                     |                           [Reactome](https://reactome.org/)                            |                                                       Collection of biological pathway and interaction data.                                                       |                                             Jassal,B. *et al.* (2020) The reactome pathway knowledgebase. *Nucleic Acids Res*, **48**, D498–D503.                                              |
+|                                     |                           [Signalink](http://signalink.org/)                           |                                              Interaction database focussing on pathways and interactions of pathways.                                              |                     Csabai,L. *et al.* (2022) SignaLink3: a multi-layered resource to uncover tissue-specific signaling networks. *Nucleic Acids Res*, **50**, D701–D709.                      |
+|                                     |                     [Wikipathways](https://www.wikipathways.org/)                      |                                                       Collection of biological pathway and interaction data.                                                       |                                            Martens,M. *et al.* (2021) WikiPathways: connecting communities. *Nucleic Acids Res*, **49**, D613–D621.                                            |
+| **Protein domain**                  |                             [PFAM](http://pfam.xfam.org/)                              |                                                                 Protein domain structure database.                                                                 |                                         Mistry,J. *et al.* (2021) Pfam: The protein families database in 2021. *Nucleic Acids Res*, **49**, D412–D419.                                         |
+| **Transcription factor regulation** |                            [ATRM](http://atrm.gao-lab.org/)                            |                                             Transcription factor - target gene interactions for Arabidopsis thaliana.                                              | Jin,J. et al. (2015) An *Arabidopsis* transcriptional regulatory map reveals distinct functional and evolutionary features of novel transcription factors. *Mol Biol Evol*, **32**, 1767–1773. |
+|                                     |                    [dorothEA](https://saezlab.github.io/dorothea/)                     |                                                Transcription factor - target gene interactions for human and mouse.                                                |             Garcia-Alonso,L. *et al.* (2019) Benchmark and integration of resources for the estimation of human transcription factor activities. *Genome Res*, **29**, 1363–1375.              |
+|                                     |                      [RegulonDB](https://regulondb.ccg.unam.mx/)                       |                                          Transcription factor - target gene interactions for *Escherichia coli* bacteria.                                          |        Tierrafría,V.H. *et al.* (2022) RegulonDB 11.0: Comprehensive high-throughput datasets on transcriptional regulation in *Escherichia coli* K-12. *Microb Genom*, **8**, 000833.         |
+|                                     |                             [TFLink](https://tflink.net/)                              |                              Small- and lagre-scale transcription factor - target gene interactions for human and 6 model organisms.                               |              Liska,O. *et al.* (2022) TFLink: an integrated gateway to access transcription factor–target gene interactions for multiple species. *Database*, **2022**, baac083.               |
+|                                     |                       [TRRUST](https://www.grnpedia.org/trrust/)                       |                                                     Transcription factor - target gene interactions for human.                                                     |              Han,H. *et al.* (2018) TRRUST v2: an expanded reference database of human and mouse transcriptional regulatory interactions. *Nucleic Acids Res*, **46**, D380–D386.              |
+|                                     |                         [Yeastract](http://www.yeastract.com/)                         |                                          Transcription factor - target gene interactions for *Saccharomyces cerevisiae*.                                           |    Teixeira,M.C. *et al.* (2018) YEASTRACT: an upgraded database for the analysis of transcription regulatory networks in Saccharomyces cerevisiae. *Nucleic Acids Res*, **46**, D348–D353.    |
+
+## Installation instructions
+
+Get the latest stable `R` release from [CRAN](http://cran.r-project.org/). Then install `muleaData` from [Bioconductor](http://bioconductor.org/) using the following code:
+
+```{r 'install', eval = FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+    install.packages("BiocManager")
+}
+
+BiocManager::install("muleaData")
+```
+
+Or the development version from [GitHub](https://github.com/ELTEbioinformatics/muleaData) with:
+
+```{r 'install_dev', eval = FALSE}
+BiocManager::install("ELTEbioinformatics/muleaData")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example, eval = requireNamespace('muleaData')}
+library("muleaData")
+## basic example code
+muleaData
+muleaData["Transcription_factor_TFLink_Caenorhabditis_elegans_All_EnsemblID"]
+```
+
+## Citation
+
+To cite package `muleaData` in publications use:
+
+Ari E, Ölbei M, Gul L, Bohár B (2024). muleaData: ExperimentalData Bioconductor Package for the mulea R Package, Contains Genes Sets for Functional Enrichment Analysis in GMT File Format. R package version 0.99.0, <https://github.com/ELTEbioinformatics/muleaData>.
+
+## Code of Conduct
+
+Please note that the `muleaData` project is released with a [Contributor Code of Conduct](http://bioconductor.org/about/code-of-conduct/). By contributing to this project, you agree to abide by its terms.
+
+## Development tools
+
+-   Continuous code testing is possible thanks to [GitHub actions](https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/) through `r BiocStyle::CRANpkg('usethis')`, `r BiocStyle::CRANpkg('remotes')`, and `r BiocStyle::CRANpkg('rcmdcheck')` customized to use [Bioconductor's docker containers](https://www.bioconductor.org/help/docker/) and `r BiocStyle::Biocpkg('BiocCheck')`.
+-   Code coverage assessment is possible thanks to [codecov](https://codecov.io/gh) and `r BiocStyle::CRANpkg('covr')`.
+-   The [documentation website](http://ELTEbioinformatics.github.io/muleaData) is automatically updated thanks to `r BiocStyle::CRANpkg('pkgdown')`.
+-   The code is styled automatically thanks to `r BiocStyle::CRANpkg('styler')`.
+-   The documentation is formatted thanks to `r BiocStyle::CRANpkg('devtools')` and `r BiocStyle::CRANpkg('roxygen2')`.
+
+For more details, check the `dev` directory.
+
+This package was developed using `r BiocStyle::Biocpkg('biocthis')`.
