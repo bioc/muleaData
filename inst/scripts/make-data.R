@@ -78,7 +78,7 @@ rm(zip_files)
 # * Saving GMTs to Rds-s ----
 #xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-destination_path <- "../Rds"
+destination_path <- "../rds"
 # create the directory if it does not exist
 if(!dir.exists(destination_path)) dir.create(destination_path)
 
