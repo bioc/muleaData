@@ -14,8 +14,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, eval = FALSE}
 library(muleaData)
+## basic example code
+muleaData
+muleaData["Transcription_factor_TFLink_Caenorhabditis_elegans_All_EnsemblID"]
 ```
 
 ```{r sessioninfo}
