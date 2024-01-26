@@ -25,7 +25,7 @@ IDs. The GMT files and the scripts we applied to create them are
 available at the
 [GMT_files_for_mulea](https://github.com/ELTEbioinformatics/GMT_files_for_mulea)
 repository. For the `muleaData` we read these *GMT* files with the
-`mulea::read_gmt()` functuion and saved it to .rds files with the
+`mulea::read_gmt()` function and saved it to .rds files with the
 standard R `saveRDS()` function.
 
 List of species `muleaData` covers:
