@@ -111,6 +111,7 @@ library("muleaData")
 ## basic example code
 muleaData
 muleaData["Transcription_factor_TFLink_Caenorhabditis_elegans_All_EnsemblID"]
+muleaData[["Transcription_factor_TFLink_Caenorhabditis_elegans_All_EnsemblID"]]
 ```
 
 ## Citation

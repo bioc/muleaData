@@ -56,7 +56,7 @@ List of species `muleaData` covers:
 Type, name, link and citation of the databases `muleaData` covers:
 
 |                                     |                                                                                        |                                                                                                                                                                    |                                                                                                                                                                                                |
-|-------------------------------------|:--------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|--------------|:------------:|:------------------:|:----------------------:|
 | **Ontology category**               |                                   **Ontology name**                                    |                                                                  **Short description of content**                                                                  |                                                                                         **Reference**                                                                                          |
 | **Gene expression**                 |                          [FlyAtlas](http://www.flyatlas.org/)                          |                                                   Tissue specific expression data for *Drosophila melanogaster*.                                                   |                      Chintapalli,V.R. *et al.* (2007) Using FlyAtlas to identify better *Drosophila melanogaster* models of human disease. *Nat Genet*, **39**, 715–720.                       |
 |                                     |                        [ModEncode](http://data.modencode.org/)                         | Functional characterization (cell line, temporal expression, tissue expression, treatment) of elements for *Caenorhabditis elegans* and *Drosophila melanogaster*. |                The Modencode Consortium *et al.* (2010) Identification of functional elements and regulatory circuits by *Drosophila* modENCODE. *Science*, **330**, 1787–1797.                |
@@ -103,6 +103,7 @@ library("muleaData")
 ## basic example code
 muleaData
 muleaData["Transcription_factor_TFLink_Caenorhabditis_elegans_All_EnsemblID"]
+muleaData[["Transcription_factor_TFLink_Caenorhabditis_elegans_All_EnsemblID"]]
 ```
 
 ## Citation
