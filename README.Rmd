@@ -56,7 +56,7 @@ List of species `muleaData` covers:
 Type, name, link and citation of the databases `muleaData` covers:
 
 |                                     |                                                                                        |                                                                                                                                                                    |                                                                                                                                                                                                |
-|--------------|:------------:|:------------------:|:----------------------:|
+|------------------|:----------------:|:----------------:|:-----------------:|
 | **Ontology category**               |                                   **Ontology name**                                    |                                                                  **Short description of content**                                                                  |                                                                                         **Reference**                                                                                          |
 | **Gene expression**                 |                          [FlyAtlas](http://www.flyatlas.org/)                          |                                                   Tissue specific expression data for *Drosophila melanogaster*.                                                   |                      Chintapalli,V.R. *et al.* (2007) Using FlyAtlas to identify better *Drosophila melanogaster* models of human disease. *Nat Genet*, **39**, 715–720.                       |
 |                                     |                        [ModEncode](http://data.modencode.org/)                         | Functional characterization (cell line, temporal expression, tissue expression, treatment) of elements for *Caenorhabditis elegans* and *Drosophila melanogaster*. |                The Modencode Consortium *et al.* (2010) Identification of functional elements and regulatory circuits by *Drosophila* modENCODE. *Science*, **330**, 1787–1797.                |
@@ -78,32 +78,45 @@ Type, name, link and citation of the databases `muleaData` covers:
 
 ## Installation instructions
 
-Get the latest stable `R` release from [CRAN](http://cran.r-project.org/). Then install `muleaData` from [Bioconductor](http://bioconductor.org/) using the following code:
+Install the developmental version of `R` from [CRAN](https://cran.r-project.org/sources.html). Then install the developmental version of [Bioconductor](http://bioconductor.org/) and the `ExperimentHub` library using the following code:
 
-```{r 'install', eval = FALSE}
-if (!requireNamespace("BiocManager", quietly = TRUE)) {
-    install.packages("BiocManager")
-}
+```{r 'install', eval=FALSE, message=FALSE, warning=FALSE}
+if (!require("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+BiocManager::install(version = "3.19")
 
-BiocManager::install("muleaData")
-```
-
-Or the development version from [GitHub](https://github.com/ELTEbioinformatics/muleaData) with:
-
-```{r 'install_dev', eval = FALSE}
-BiocManager::install("ELTEbioinformatics/muleaData")
+BiocManager::install("ExperimentHub")
 ```
 
 ## Example
 
 This is a basic example which shows you how to use the `muleaData`:
 
-```{r example, eval = requireNamespace('muleaData')}
-library("muleaData")
-## basic example code
+```{r 'example', eval=FALSE, message=FALSE, warning=FALSE}
+
+# Calling the ExperimentHub library.
+library(ExperimentHub)
+
+# Downloading the metadata from ExperimentHub.
+eh <- ExperimentHub()
+
+# Creating the muleaData variable.
+muleaData <- query(eh, "muleaData")
+
+# Checking the muleaData variable.
 muleaData
-muleaData["Transcription_factor_TFLink_Caenorhabditis_elegans_All_EnsemblID"]
-muleaData[["Transcription_factor_TFLink_Caenorhabditis_elegans_All_EnsemblID"]]
+
+# Looking for the ExperimentalHub ID of i.e. tagret genes of transcription
+# factors from TFLink in Caenorhabditis elegans.
+mcols(muleaData) %>% 
+  as.data.frame() %>% 
+  dplyr::filter(species == "Caenorhabditis elegans" & 
+                  sourceurl == "https://tflink.net/")
+
+# Creating a variable for the GMT data.frame of EH8735.
+# EH8735 contains small-scale measurement results, where the target genes are
+# coded with Ensembl ID-s
+Transcription_factor_TFLink_Caenorhabditis_elegans_SS_EnsemblID <- muleaData[["EH8735"]]
 ```
 
 ## Citation

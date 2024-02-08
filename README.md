@@ -1,67 +1,49 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # muleaData
 
 <!-- badges: start -->
 
-[![GitHub
-issues](https://img.shields.io/github/issues/ELTEbioinformatics/muleaData)](https://github.com/ELTEbioinformatics/muleaData/issues)
-[![GitHub
-pulls](https://img.shields.io/github/issues-pr/ELTEbioinformatics/muleaData)](https://github.com/ELTEbioinformatics/muleaData/pulls)
+[![GitHub issues](https://img.shields.io/github/issues/ELTEbioinformatics/muleaData)](https://github.com/ELTEbioinformatics/muleaData/issues) [![GitHub pulls](https://img.shields.io/github/issues-pr/ELTEbioinformatics/muleaData)](https://github.com/ELTEbioinformatics/muleaData/pulls)
 
 <!-- badges: end -->
 
-`muleaData` is an ExperimentHubData Bioconductor package for the
-[`mulea`](https://github.com/ELTEbioinformatics/mulea) R package.
-`mulea` is a comprehensive overrepresentation and functional enrichment
-analyser R package which reads ontologies (gene and protein sets) in a
-standardised *GMT* (Gene Matrix Transposed) format. We provide these
-*GMT* files for 27 different model organisms, ranging from *Escherichia
-coli* to human, all acquired from publicly available data sources. The
-*GMT* files are provided with multiple gene and protein identifiers such
-as *UniProt* protein IDs, *Entrez*, *Gene Symbol*, and *Ensembl* gene
-IDs. The GMT files and the scripts we applied to create them are
-available at the
-[GMT_files_for_mulea](https://github.com/ELTEbioinformatics/GMT_files_for_mulea)
-repository. For the `muleaData` we read these *GMT* files with the
-`mulea::read_gmt()` function and saved it to .rds files with the
-standard R `saveRDS()` function.
+`muleaData` is an ExperimentHubData Bioconductor package for the [`mulea`](https://github.com/ELTEbioinformatics/mulea) R package. `mulea` is a comprehensive overrepresentation and functional enrichment analyser R package which reads ontologies (gene and protein sets) in a standardised *GMT* (Gene Matrix Transposed) format. We provide these *GMT* files for 27 different model organisms, ranging from *Escherichia coli* to human, all acquired from publicly available data sources. The *GMT* files are provided with multiple gene and protein identifiers such as *UniProt* protein IDs, *Entrez*, *Gene Symbol*, and *Ensembl* gene IDs. The GMT files and the scripts we applied to create them are available at the [GMT_files_for_mulea](https://github.com/ELTEbioinformatics/GMT_files_for_mulea) repository. For the `muleaData` we read these *GMT* files with the `mulea::read_gmt()` function and saved it to .rds files with the standard R `saveRDS()` function.
 
 List of species `muleaData` covers:
 
-- *Arabidopsis thaliana*
-- *Bacillus subtilis*
-- *Bacteroides thetaiotaomicron VPI-5482*
-- *Bifidobacterium longum*
-- *Bos taurus*
-- *Caenorhabditis elegans*
-- *Chlamydomonas reinhardtii*
-- *Danio rerio*
-- *Daphnia pulex*
-- *Dictyostelium discoideum*
-- *Drosophila melanogaster*
-- *Drosophila simulans*
-- *Escherichia coli*
-- *Gallus gallus*
-- *Homo sapiens*
-- *Macaca mulatta*
-- *Mus musculus*
-- *Mycobacterium tubercolosis*
-- *Neurospora crassa*
-- *Pan troglodytes*
-- *Rattus norvegicus*
-- *Saccharomyces cerevisiae*
-- *Salmonella enterica subsp. enterica serovar Typhimurium str. LT2*
-- *Schizosaccharomyces pombe*
-- *Tetrahymena thermophila*
-- *Xenopus tropicalis*
-- *Zea mays*
+-   *Arabidopsis thaliana*
+-   *Bacillus subtilis*
+-   *Bacteroides thetaiotaomicron VPI-5482*
+-   *Bifidobacterium longum*
+-   *Bos taurus*
+-   *Caenorhabditis elegans*
+-   *Chlamydomonas reinhardtii*
+-   *Danio rerio*
+-   *Daphnia pulex*
+-   *Dictyostelium discoideum*
+-   *Drosophila melanogaster*
+-   *Drosophila simulans*
+-   *Escherichia coli*
+-   *Gallus gallus*
+-   *Homo sapiens*
+-   *Macaca mulatta*
+-   *Mus musculus*
+-   *Mycobacterium tubercolosis*
+-   *Neurospora crassa*
+-   *Pan troglodytes*
+-   *Rattus norvegicus*
+-   *Saccharomyces cerevisiae*
+-   *Salmonella enterica subsp. enterica serovar Typhimurium str. LT2*
+-   *Schizosaccharomyces pombe*
+-   *Tetrahymena thermophila*
+-   *Xenopus tropicalis*
+-   *Zea mays*
 
 Type, name, link and citation of the databases `muleaData` covers:
 
 |                                     |                                                                                        |                                                                                                                                                                    |                                                                                                                                                                                                |
-|-------------------------------------|:--------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|--------------|:------------:|:------------------:|:----------------------:|
 | **Ontology category**               |                                   **Ontology name**                                    |                                                                  **Short description of content**                                                                  |                                                                                         **Reference**                                                                                          |
 | **Gene expression**                 |                          [FlyAtlas](http://www.flyatlas.org/)                          |                                                   Tissue specific expression data for *Drosophila melanogaster*.                                                   |                      Chintapalli,V.R. *et al.* (2007) Using FlyAtlas to identify better *Drosophila melanogaster* models of human disease. *Nat Genet*, **39**, 715–720.                       |
 |                                     |                        [ModEncode](http://data.modencode.org/)                         | Functional characterization (cell line, temporal expression, tissue expression, treatment) of elements for *Caenorhabditis elegans* and *Drosophila melanogaster*. |                The Modencode Consortium *et al.* (2010) Identification of functional elements and regulatory circuits by *Drosophila* modENCODE. *Science*, **330**, 1787–1797.                |
@@ -83,23 +65,14 @@ Type, name, link and citation of the databases `muleaData` covers:
 
 ## Installation instructions
 
-Get the latest stable `R` release from
-[CRAN](http://cran.r-project.org/). Then install `muleaData` from
-[Bioconductor](http://bioconductor.org/) using the following code:
+Install the developmental version of `R` from [CRAN](https://cran.r-project.org/sources.html). Then install the developmental version of [Bioconductor](http://bioconductor.org/) and the `ExperimentHub` library using the following code:
 
 ``` r
-if (!requireNamespace("BiocManager", quietly = TRUE)) {
-    install.packages("BiocManager")
-}
+if (!require("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+BiocManager::install(version = "3.19")
 
-BiocManager::install("muleaData")
-```
-
-Or the development version from
-[GitHub](https://github.com/ELTEbioinformatics/muleaData) with:
-
-``` r
-BiocManager::install("ELTEbioinformatics/muleaData")
+BiocManager::install("ExperimentHub")
 ```
 
 ## Example
@@ -107,52 +80,49 @@ BiocManager::install("ELTEbioinformatics/muleaData")
 This is a basic example which shows you how to use the `muleaData`:
 
 ``` r
-library("muleaData")
-## basic example code
+# Calling the ExperimentHub library.
+library(ExperimentHub)
+
+# Downloading the metadata from ExperimentHub.
+eh <- ExperimentHub()
+
+# Creating the muleaData variable.
+muleaData <- query(eh, "muleaData")
+
+# Checking the muleaData variable.
 muleaData
-muleaData["Transcription_factor_TFLink_Caenorhabditis_elegans_All_EnsemblID"]
-muleaData[["Transcription_factor_TFLink_Caenorhabditis_elegans_All_EnsemblID"]]
+
+# Looking for the ExperimentalHub ID of i.e. tagret genes of transcription
+# factors from TFLink in Caenorhabditis elegans.
+mcols(muleaData) %>% 
+  as.data.frame() %>% 
+  dplyr::filter(species == "Caenorhabditis elegans" & 
+                  sourceurl == "https://tflink.net/")
+
+# Creating a variable for the GMT data.frame of EH8735.
+# EH8735 contains small-scale measurement results, where the target genes are
+# coded with Ensembl ID-s
+Transcription_factor_TFLink_Caenorhabditis_elegans_SS_EnsemblID <- muleaData[["EH8735"]]
 ```
 
 ## Citation
 
 To cite package `muleaData` in publications use:
 
-Ari E, Ölbei M, Gul L, Bohár B (2024). muleaData: ExperimentalData
-Bioconductor Package for the mulea R Package, Contains Genes Sets for
-Functional Enrichment Analysis in GMT File Format. R package version
-0.99.0, <https://github.com/ELTEbioinformatics/muleaData>.
+Ari E, Ölbei M, Gul L, Bohár B (2024). muleaData: ExperimentalData Bioconductor Package for the mulea R Package, Contains Genes Sets for Functional Enrichment Analysis in GMT File Format. R package version 0.99.0, <https://github.com/ELTEbioinformatics/muleaData>.
 
 ## Code of Conduct
 
-Please note that the `muleaData` project is released with a [Contributor
-Code of Conduct](http://bioconductor.org/about/code-of-conduct/). By
-contributing to this project, you agree to abide by its terms.
+Please note that the `muleaData` project is released with a [Contributor Code of Conduct](http://bioconductor.org/about/code-of-conduct/). By contributing to this project, you agree to abide by its terms.
 
 ## Development tools
 
-- Continuous code testing is possible thanks to [GitHub
-  actions](https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/)
-  through *[usethis](https://CRAN.R-project.org/package=usethis)*,
-  *[remotes](https://CRAN.R-project.org/package=remotes)*, and
-  *[rcmdcheck](https://CRAN.R-project.org/package=rcmdcheck)* customized
-  to use [Bioconductor’s docker
-  containers](https://www.bioconductor.org/help/docker/) and
-  *[BiocCheck](https://bioconductor.org/packages/3.18/BiocCheck)*.
-- Code coverage assessment is possible thanks to
-  [codecov](https://codecov.io/gh) and
-  *[covr](https://CRAN.R-project.org/package=covr)*.
-- The [documentation
-  website](http://ELTEbioinformatics.github.io/muleaData) is
-  automatically updated thanks to
-  *[pkgdown](https://CRAN.R-project.org/package=pkgdown)*.
-- The code is styled automatically thanks to
-  *[styler](https://CRAN.R-project.org/package=styler)*.
-- The documentation is formatted thanks to
-  *[devtools](https://CRAN.R-project.org/package=devtools)* and
-  *[roxygen2](https://CRAN.R-project.org/package=roxygen2)*.
+-   Continuous code testing is possible thanks to [GitHub actions](https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/) through [*usethis*](https://CRAN.R-project.org/package=usethis), [*remotes*](https://CRAN.R-project.org/package=remotes), and [*rcmdcheck*](https://CRAN.R-project.org/package=rcmdcheck) customized to use [Bioconductor’s docker containers](https://www.bioconductor.org/help/docker/) and [*BiocCheck*](https://bioconductor.org/packages/3.18/BiocCheck).
+-   Code coverage assessment is possible thanks to [codecov](https://codecov.io/gh) and [*covr*](https://CRAN.R-project.org/package=covr).
+-   The [documentation website](http://ELTEbioinformatics.github.io/muleaData) is automatically updated thanks to [*pkgdown*](https://CRAN.R-project.org/package=pkgdown).
+-   The code is styled automatically thanks to [*styler*](https://CRAN.R-project.org/package=styler).
+-   The documentation is formatted thanks to [*devtools*](https://CRAN.R-project.org/package=devtools) and [*roxygen2*](https://CRAN.R-project.org/package=roxygen2).
 
 For more details, check the `dev` directory.
 
-This package was developed using
-*[biocthis](https://bioconductor.org/packages/3.18/biocthis)*.
+This package was developed using [*biocthis*](https://bioconductor.org/packages/3.18/biocthis).
