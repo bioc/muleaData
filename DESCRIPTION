@@ -15,7 +15,7 @@ Authors@R: c(
 Description: ExperimentHubData package for the 'mulea' comprehensive overrepresentation and functional enrichment analyser R package. Here we provide ontologies (gene sets) in a data.frame for 27 different organisms, ranging from Escherichia coli to human, all acquired from publicly available data sources. Each ontology is provided with multiple gene and protein identifiers.
 License: MIT + file LICENSE
 URL: https://github.com/ELTEbioinformatics/muleaData
-BugReports: https://support.bioconductor.org/tag/muleaData
+BugReports: https://support.bioconductor.org/tag/muleaData/issues
 biocViews: ExperimentData, ExperimentHub, Arabidopsis_thaliana_Data, Bacillus_subtilis_Data, Caenorhabditis_elegans_Data, Danio_rerio_Data, Drosophila_melanogaster_Data, Escherichia_coli_Data, Homo_sapiens_Data, Pan_troglodytes_Data, Pseudomonas_aeruginosa_Data, Rattus_norvegicus_Data, Saccharomyces_cerevisiae_Data, Staphylococcus_aureus_Data, ChIPSeqData, DNASeqData, ExpressionData, miRNAData
 BiocType: ExperimentData
 Encoding: UTF-8
