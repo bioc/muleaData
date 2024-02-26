@@ -12,7 +12,7 @@ Authors@R: c(
                      comment = c(ORCID = "0000-0002-3033-5448")),
               person("Tamás", "Stirling", role = c("aut"),
                      comment = c(ORCID = "0000-0002-8964-6443")))
-Description: ExperimentHubData package for the 'mulea' comprehensive overrepresentation and functional enrichment analyser R package. Here we provide ontologies (gene sets) in a data.frame for 27 different organisms, ranging from Escherichia coli to human, all acquired from publicly available data sources. Each ontology is provided with multiple gene and protein identifiers.
+Description: ExperimentHubData package for the 'mulea' comprehensive overrepresentation and functional enrichment analyser R package. Here we provide ontologies (gene sets) in a data.frame for 27 different organisms, ranging from Escherichia coli to human, all acquired from publicly available data sources. Each ontology is provided with multiple gene and protein identifiers. Please see the NEWS file for a list of changes in each version.
 License: MIT + file LICENSE
 URL: https://github.com/ELTEbioinformatics/muleaData
 BugReports: https://support.bioconductor.org/tag/muleaData/issues
@@ -20,7 +20,7 @@ biocViews: ExperimentData, ExperimentHub, Arabidopsis_thaliana_Data, Bacillus_su
 BiocType: ExperimentData
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 Suggests: 
     knitr,
     rmarkdown
