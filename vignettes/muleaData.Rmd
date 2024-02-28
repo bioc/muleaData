@@ -19,9 +19,22 @@ vignette: >
 knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 ```
 
-`muleaData` is an ExperimentHubData Bioconductor package providing pre-processed gene set data for use with the [`mulea`](https://github.com/ELTEbioinformatics/mulea) R package, a comprehensive tool for overrepresentation and functional enrichment analysis. `mulea` leverages ontologies (gene and protein sets) stored in the standardized Gene Matrix Transposed (GMT) format.
+`muleaData` is an ExperimentHubData Bioconductor package providing 
+pre-processed gene set data for use with the 
+[`mulea`](https://github.com/ELTEbioinformatics/mulea) 
+R package, a comprehensive tool for overrepresentation and functional 
+enrichment analysis. `mulea` leverages ontologies (gene and protein sets) 
+stored in the standardized Gene Matrix Transposed (GMT) format.
 
-We provide these *GMT* files for 27 different model organisms, ranging from *Escherichia coli* to human. These files are compiled from publicly available sources and include various gene and protein identifiers like *UniProt* protein IDs, *Entrez*, *Gene Symbol*, and *Ensembl* gene IDs. The GMT files and the scripts we applied to create them are available at the [GMT_files_for_mulea](https://github.com/ELTEbioinformatics/GMT_files_for_mulea) repository. For the `muleaData` we read these *GMT* files with the `mulea::read_gmt()` function and saved them to **.rds** files with the standard R `saveRDS()` function.
+We provide these *GMT* files for 27 different model organisms, ranging from 
+*Escherichia coli* to human. These files are compiled from publicly available 
+sources and include various gene and protein identifiers like *UniProt* 
+protein IDs, *Entrez*, *Gene Symbol*, and *Ensembl* gene IDs. 
+The GMT files and the scripts we applied to create them are available at the 
+[GMT_files_for_mulea](https://github.com/ELTEbioinformatics/GMT_files_for_mulea)
+repository. For the `muleaData` we read these *GMT* 
+files with the `mulea::read_gmt()` function and saved 
+them to **.rds** files with the standard R `saveRDS()` function.
 
 List of species `muleaData` covers:
 
@@ -78,11 +91,14 @@ Type, name, link and citation of the databases `muleaData` covers:
 
 ## Installation Instructions
 
-Install the developmental version of `R` from [CRAN](https://cran.r-project.org/sources.html). Then install the developmental version of [Bioconductor](http://bioconductor.org/) and the `ExperimentHub` library using the following code:
+Install the developmental version of `R` from 
+[CRAN](https://cran.r-project.org/sources.html). Then install 
+the developmental version of [Bioconductor](http://bioconductor.org/) 
+and the `ExperimentHub` library using the following code:
 
-```{r 'install'}
+```{r 'install', eval=FALSE}
 if (!require("BiocManager", quietly = TRUE))
-  install.packages("BiocManager")
+    install.packages("BiocManager")
 BiocManager::install(version = "3.19")
 
 BiocManager::install("ExperimentHub")
@@ -109,14 +125,15 @@ muleaData
 # Looking for the ExperimentalHub ID of i.e. target genes of transcription
 # factors from TFLink in Caenorhabditis elegans.
 mcols(muleaData) %>% 
-  as.data.frame() %>% 
-  dplyr::filter(species == "Caenorhabditis elegans" & 
-                  sourceurl == "https://tflink.net/")
+    as.data.frame() %>% 
+    dplyr::filter(species == "Caenorhabditis elegans" & 
+                      sourceurl == "https://tflink.net/")
 
 # Creating a variable for the GMT data.frame of EH8735.
 # EH8735 contains small-scale measurement results, where the target genes are
 # coded with Ensembl ID-s
-Transcription_factor_TFLink_Caenorhabditis_elegans_SS_EnsemblID <- muleaData[["EH8735"]]
+Transcription_factor_TFLink_Caenorhabditis_elegans_SS_EnsemblID <- 
+    muleaData[["EH8735"]]
 ```
 
 # Session Info
@@ -129,6 +146,10 @@ sessionInfo()
 
 To cite package `muleaData` in publications use:
 
-Ari E, Ölbei M, Gul L, Bohár B, Stirling T (2024). muleaData: ExperimentalData Bioconductor Package for the mulea R Package, Contains Genes Sets for Functional Enrichment Analysis in GMT File Format. R package version 0.99.0, [https://github.com/ELTEbioinformatics/muleaData](https://github.com/ELTEbioinformatics/muleaData).
+Ari E, Ölbei M, Gul L, Bohár B, Stirling T (2024). muleaData: 
+ExperimentalData Bioconductor Package for the mulea R Package, 
+Contains Genes Sets for Functional Enrichment Analysis in GMT File Format. 
+R package version 0.99.0, 
+[https://github.com/ELTEbioinformatics/muleaData](https://github.com/ELTEbioinformatics/muleaData).
 
 

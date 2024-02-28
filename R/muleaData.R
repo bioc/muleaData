@@ -15,6 +15,10 @@
 #' For the `muleaData` we read these GMT files with the 
 #' `mulea::read_gmt()` function and saved them to 
 #' *.rds* files with the standard R `saveRDS()` function.
+#' 
+#' @details
+#' The muleaData object is generated dynamically by querying the 
+#' `ExperimentHub` package.
 #'
 #' @usage 
 #' query(ExperimentHub::ExperimentHub(), "muleaData")
@@ -84,4 +88,11 @@
 #' # coded with Ensembl ID-s
 #' Transcription_factor_TFLink_Caenorhabditis_elegans_SS_EnsemblID <- 
 #'   muleaData[["EH8735"]]
+#'   
+#' 
+#' @seealso
+#' \code{\link{ExperimentHub}}, \code{\link{query}}
+#'
+#' @name muleaData
+NULL
 
