@@ -19,11 +19,6 @@ comprehensive tool for overrepresentation and functional enrichment
 analysis. `mulea` leverages ontologies (gene and protein sets) stored in
 the standardized Gene Matrix Transposed (GMT) format.
 
-This package offers GMT files for 27 model organisms, ranging from
-Escherichia coli to human. These files are compiled from publicly
-available sources and include various gene and protein identifiers like
-UniProt, Entrez, Gene Symbol, and Ensembl IDs.
-
 We provide these *GMT* files for 27 different model organisms, ranging
 from *Escherichia coli* to human. These files are compiled from publicly
 available sources and include various gene and protein identifiers like
@@ -88,7 +83,7 @@ Type, name, link and citation of the databases `muleaData` covers:
 |                                     |                       [TRRUST](https://www.grnpedia.org/trrust/)                       |                                                     Transcription factor - target gene interactions for human.                                                     |              Han,H. *et al.* (2018) TRRUST v2: an expanded reference database of human and mouse transcriptional regulatory interactions. *Nucleic Acids Res*, **46**, D380–D386.              |
 |                                     |                         [Yeastract](http://www.yeastract.com/)                         |                                          Transcription factor - target gene interactions for *Saccharomyces cerevisiae*.                                           |    Teixeira,M.C. *et al.* (2018) YEASTRACT: an upgraded database for the analysis of transcription regulatory networks in Saccharomyces cerevisiae. *Nucleic Acids Res*, **46**, D348–D353.    |
 
-## Installation Instructions
+# Installation Instructions
 
 Install the developmental version of `R` from
 [CRAN](https://cran.r-project.org/sources.html). Then install the
@@ -99,11 +94,33 @@ the `ExperimentHub` library using the following code:
 if (!require("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 BiocManager::install(version = "3.19")
+#> 'getOption("repos")' replaces Bioconductor standard repositories, see
+#> 'help("repositories", package = "BiocManager")' for details.
+#> Replacement repositories:
+#>     CRAN: https://cloud.r-project.org
+#> Bioconductor version 3.19 (BiocManager 1.30.22), R Under development (unstable)
+#>   (2024-02-21 r85967)
+#> Installation paths not writeable, unable to update packages
+#>   path: /usr/local/lib/R/library
+#>   packages:
+#>     boot
 
 BiocManager::install("ExperimentHub")
+#> 'getOption("repos")' replaces Bioconductor standard repositories, see
+#> 'help("repositories", package = "BiocManager")' for details.
+#> Replacement repositories:
+#>     CRAN: https://cloud.r-project.org
+#> Bioconductor version 3.19 (BiocManager 1.30.22), R Under development (unstable)
+#>   (2024-02-21 r85967)
+#> Warning: package(s) not installed when version(s) same as or greater than current; use
+#>   `force = TRUE` to re-install: 'ExperimentHub'
+#> Installation paths not writeable, unable to update packages
+#>   path: /usr/local/lib/R/library
+#>   packages:
+#>     boot
 ```
 
-## Example
+# Example
 
 This is a basic example which shows you how to use the `muleaData`:
 
@@ -111,6 +128,23 @@ This is a basic example which shows you how to use the `muleaData`:
 
 # Calling the ExperimentHub library.
 library(ExperimentHub)
+#> Loading required package: BiocGenerics
+#> 
+#> Attaching package: 'BiocGenerics'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     IQR, mad, sd, var, xtabs
+#> The following objects are masked from 'package:base':
+#> 
+#>     anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+#>     colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+#>     get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply,
+#>     match, mget, order, paste, pmax, pmax.int, pmin, pmin.int,
+#>     Position, rank, rbind, Reduce, rownames, sapply, setdiff, table,
+#>     tapply, union, unique, unsplit, which.max, which.min
+#> Loading required package: AnnotationHub
+#> Loading required package: BiocFileCache
+#> Loading required package: dbplyr
 
 # Downloading the metadata from ExperimentHub.
 eh <- ExperimentHub()
@@ -120,6 +154,28 @@ muleaData <- query(eh, "muleaData")
 
 # Checking the muleaData variable.
 muleaData
+#> ExperimentHub with 879 records
+#> # snapshotDate(): 2024-02-26
+#> # $dataprovider: muleaData
+#> # $species: Drosophila melanogaster, Homo sapiens, Mus musculus, Caenorhabdi...
+#> # $rdataclass: data.frame
+#> # additional mcols(): taxonomyid, genome, description,
+#> #   coordinate_1_based, maintainer, rdatadateadded, preparerclass, tags,
+#> #   rdatapath, sourceurl, sourcetype 
+#> # retrieve records with, e.g., 'object[["EH8571"]]' 
+#> 
+#>            title                                                              
+#>   EH8571 | Genomic_location_Ensembl_Arabidopsis_thaliana_10genes_EnsemblID.rds
+#>   EH8572 | Genomic_location_Ensembl_Arabidopsis_thaliana_10genes_EntrezID.rds 
+#>   EH8573 | Genomic_location_Ensembl_Arabidopsis_thaliana_10genes_GeneSymbol...
+#>   EH8574 | Genomic_location_Ensembl_Arabidopsis_thaliana_10genes_UniprotID.rds
+#>   EH8575 | Genomic_location_Ensembl_Arabidopsis_thaliana_20genes_EnsemblID.rds
+#>   ...      ...                                                                
+#>   EH9445 | Genomic_location_Ensembl_Zea_mays_5genes_UniprotID.rds             
+#>   EH9446 | Protein_domain_PFAM_Zea_mays_EnsemblID.rds                         
+#>   EH9447 | Protein_domain_PFAM_Zea_mays_EntrezID.rds                          
+#>   EH9448 | Protein_domain_PFAM_Zea_mays_GeneSymbol.rds                        
+#>   EH9449 | Protein_domain_PFAM_Zea_mays_UniprotID.rds
 
 # Looking for the ExperimentalHub ID of i.e. target genes of transcription
 # factors from TFLink in Caenorhabditis elegans.
@@ -127,14 +183,160 @@ mcols(muleaData) %>%
   as.data.frame() %>% 
   dplyr::filter(species == "Caenorhabditis elegans" & 
                   sourceurl == "https://tflink.net/")
+#>                                                                        title
+#> EH8727  Transcription_factor_TFLink_Caenorhabditis_elegans_All_EnsemblID.rds
+#> EH8728   Transcription_factor_TFLink_Caenorhabditis_elegans_All_EntrezID.rds
+#> EH8729 Transcription_factor_TFLink_Caenorhabditis_elegans_All_GeneSymbol.rds
+#> EH8730  Transcription_factor_TFLink_Caenorhabditis_elegans_All_UniprotID.rds
+#> EH8731   Transcription_factor_TFLink_Caenorhabditis_elegans_LS_EnsemblID.rds
+#> EH8732    Transcription_factor_TFLink_Caenorhabditis_elegans_LS_EntrezID.rds
+#> EH8733  Transcription_factor_TFLink_Caenorhabditis_elegans_LS_GeneSymbol.rds
+#> EH8734   Transcription_factor_TFLink_Caenorhabditis_elegans_LS_UniprotID.rds
+#> EH8735   Transcription_factor_TFLink_Caenorhabditis_elegans_SS_EnsemblID.rds
+#> EH8736    Transcription_factor_TFLink_Caenorhabditis_elegans_SS_EntrezID.rds
+#> EH8737  Transcription_factor_TFLink_Caenorhabditis_elegans_SS_GeneSymbol.rds
+#> EH8738   Transcription_factor_TFLink_Caenorhabditis_elegans_SS_UniprotID.rds
+#>        dataprovider                species taxonomyid genome
+#> EH8727    muleaData Caenorhabditis elegans       6239   <NA>
+#> EH8728    muleaData Caenorhabditis elegans       6239   <NA>
+#> EH8729    muleaData Caenorhabditis elegans       6239   <NA>
+#> EH8730    muleaData Caenorhabditis elegans       6239   <NA>
+#> EH8731    muleaData Caenorhabditis elegans       6239   <NA>
+#> EH8732    muleaData Caenorhabditis elegans       6239   <NA>
+#> EH8733    muleaData Caenorhabditis elegans       6239   <NA>
+#> EH8734    muleaData Caenorhabditis elegans       6239   <NA>
+#> EH8735    muleaData Caenorhabditis elegans       6239   <NA>
+#> EH8736    muleaData Caenorhabditis elegans       6239   <NA>
+#> EH8737    muleaData Caenorhabditis elegans       6239   <NA>
+#> EH8738    muleaData Caenorhabditis elegans       6239   <NA>
+#>                                                                                                                                                                                                                                                                                                                                                                         description
+#> EH8727 ExperimentHubData package for the 'mulea' comprehensive overrepresentation and functional enrichment analyser R package. Here we provide ontologies (gene sets) in a data.frame for 27 different organisms, ranging from Escherichia coli to human, all acquired from publicly available data sources. Each ontology is provided with multiple gene and protein identifiers.
+#> EH8728 ExperimentHubData package for the 'mulea' comprehensive overrepresentation and functional enrichment analyser R package. Here we provide ontologies (gene sets) in a data.frame for 27 different organisms, ranging from Escherichia coli to human, all acquired from publicly available data sources. Each ontology is provided with multiple gene and protein identifiers.
+#> EH8729 ExperimentHubData package for the 'mulea' comprehensive overrepresentation and functional enrichment analyser R package. Here we provide ontologies (gene sets) in a data.frame for 27 different organisms, ranging from Escherichia coli to human, all acquired from publicly available data sources. Each ontology is provided with multiple gene and protein identifiers.
+#> EH8730 ExperimentHubData package for the 'mulea' comprehensive overrepresentation and functional enrichment analyser R package. Here we provide ontologies (gene sets) in a data.frame for 27 different organisms, ranging from Escherichia coli to human, all acquired from publicly available data sources. Each ontology is provided with multiple gene and protein identifiers.
+#> EH8731 ExperimentHubData package for the 'mulea' comprehensive overrepresentation and functional enrichment analyser R package. Here we provide ontologies (gene sets) in a data.frame for 27 different organisms, ranging from Escherichia coli to human, all acquired from publicly available data sources. Each ontology is provided with multiple gene and protein identifiers.
+#> EH8732 ExperimentHubData package for the 'mulea' comprehensive overrepresentation and functional enrichment analyser R package. Here we provide ontologies (gene sets) in a data.frame for 27 different organisms, ranging from Escherichia coli to human, all acquired from publicly available data sources. Each ontology is provided with multiple gene and protein identifiers.
+#> EH8733 ExperimentHubData package for the 'mulea' comprehensive overrepresentation and functional enrichment analyser R package. Here we provide ontologies (gene sets) in a data.frame for 27 different organisms, ranging from Escherichia coli to human, all acquired from publicly available data sources. Each ontology is provided with multiple gene and protein identifiers.
+#> EH8734 ExperimentHubData package for the 'mulea' comprehensive overrepresentation and functional enrichment analyser R package. Here we provide ontologies (gene sets) in a data.frame for 27 different organisms, ranging from Escherichia coli to human, all acquired from publicly available data sources. Each ontology is provided with multiple gene and protein identifiers.
+#> EH8735 ExperimentHubData package for the 'mulea' comprehensive overrepresentation and functional enrichment analyser R package. Here we provide ontologies (gene sets) in a data.frame for 27 different organisms, ranging from Escherichia coli to human, all acquired from publicly available data sources. Each ontology is provided with multiple gene and protein identifiers.
+#> EH8736 ExperimentHubData package for the 'mulea' comprehensive overrepresentation and functional enrichment analyser R package. Here we provide ontologies (gene sets) in a data.frame for 27 different organisms, ranging from Escherichia coli to human, all acquired from publicly available data sources. Each ontology is provided with multiple gene and protein identifiers.
+#> EH8737 ExperimentHubData package for the 'mulea' comprehensive overrepresentation and functional enrichment analyser R package. Here we provide ontologies (gene sets) in a data.frame for 27 different organisms, ranging from Escherichia coli to human, all acquired from publicly available data sources. Each ontology is provided with multiple gene and protein identifiers.
+#> EH8738 ExperimentHubData package for the 'mulea' comprehensive overrepresentation and functional enrichment analyser R package. Here we provide ontologies (gene sets) in a data.frame for 27 different organisms, ranging from Escherichia coli to human, all acquired from publicly available data sources. Each ontology is provided with multiple gene and protein identifiers.
+#>        coordinate_1_based                     maintainer rdatadateadded
+#> EH8727                  1 Eszter Ari arieszter@gmail.com     2024-02-07
+#> EH8728                  1 Eszter Ari arieszter@gmail.com     2024-02-07
+#> EH8729                  1 Eszter Ari arieszter@gmail.com     2024-02-07
+#> EH8730                  1 Eszter Ari arieszter@gmail.com     2024-02-07
+#> EH8731                  1 Eszter Ari arieszter@gmail.com     2024-02-07
+#> EH8732                  1 Eszter Ari arieszter@gmail.com     2024-02-07
+#> EH8733                  1 Eszter Ari arieszter@gmail.com     2024-02-07
+#> EH8734                  1 Eszter Ari arieszter@gmail.com     2024-02-07
+#> EH8735                  1 Eszter Ari arieszter@gmail.com     2024-02-07
+#> EH8736                  1 Eszter Ari arieszter@gmail.com     2024-02-07
+#> EH8737                  1 Eszter Ari arieszter@gmail.com     2024-02-07
+#> EH8738                  1 Eszter Ari arieszter@gmail.com     2024-02-07
+#>        preparerclass         tags rdataclass
+#> EH8727     muleaData Arabidop.... data.frame
+#> EH8728     muleaData Arabidop.... data.frame
+#> EH8729     muleaData Arabidop.... data.frame
+#> EH8730     muleaData Arabidop.... data.frame
+#> EH8731     muleaData Arabidop.... data.frame
+#> EH8732     muleaData Arabidop.... data.frame
+#> EH8733     muleaData Arabidop.... data.frame
+#> EH8734     muleaData Arabidop.... data.frame
+#> EH8735     muleaData Arabidop.... data.frame
+#> EH8736     muleaData Arabidop.... data.frame
+#> EH8737     muleaData Arabidop.... data.frame
+#> EH8738     muleaData Arabidop.... data.frame
+#>                                                                              rdatapath
+#> EH8727  muleaData/Transcription_factor_TFLink_Caenorhabditis_elegans_All_EnsemblID.rds
+#> EH8728   muleaData/Transcription_factor_TFLink_Caenorhabditis_elegans_All_EntrezID.rds
+#> EH8729 muleaData/Transcription_factor_TFLink_Caenorhabditis_elegans_All_GeneSymbol.rds
+#> EH8730  muleaData/Transcription_factor_TFLink_Caenorhabditis_elegans_All_UniprotID.rds
+#> EH8731   muleaData/Transcription_factor_TFLink_Caenorhabditis_elegans_LS_EnsemblID.rds
+#> EH8732    muleaData/Transcription_factor_TFLink_Caenorhabditis_elegans_LS_EntrezID.rds
+#> EH8733  muleaData/Transcription_factor_TFLink_Caenorhabditis_elegans_LS_GeneSymbol.rds
+#> EH8734   muleaData/Transcription_factor_TFLink_Caenorhabditis_elegans_LS_UniprotID.rds
+#> EH8735   muleaData/Transcription_factor_TFLink_Caenorhabditis_elegans_SS_EnsemblID.rds
+#> EH8736    muleaData/Transcription_factor_TFLink_Caenorhabditis_elegans_SS_EntrezID.rds
+#> EH8737  muleaData/Transcription_factor_TFLink_Caenorhabditis_elegans_SS_GeneSymbol.rds
+#> EH8738   muleaData/Transcription_factor_TFLink_Caenorhabditis_elegans_SS_UniprotID.rds
+#>                  sourceurl sourcetype
+#> EH8727 https://tflink.net/   Multiple
+#> EH8728 https://tflink.net/   Multiple
+#> EH8729 https://tflink.net/   Multiple
+#> EH8730 https://tflink.net/   Multiple
+#> EH8731 https://tflink.net/   Multiple
+#> EH8732 https://tflink.net/   Multiple
+#> EH8733 https://tflink.net/   Multiple
+#> EH8734 https://tflink.net/   Multiple
+#> EH8735 https://tflink.net/   Multiple
+#> EH8736 https://tflink.net/   Multiple
+#> EH8737 https://tflink.net/   Multiple
+#> EH8738 https://tflink.net/   Multiple
 
 # Creating a variable for the GMT data.frame of EH8735.
 # EH8735 contains small-scale measurement results, where the target genes are
 # coded with Ensembl ID-s
 Transcription_factor_TFLink_Caenorhabditis_elegans_SS_EnsemblID <- muleaData[["EH8735"]]
+#> see ?muleaData and browseVignettes('muleaData') for documentation
+#> loading from cache
 ```
 
-## Citation
+# Session Info
+
+``` r
+sessionInfo()
+#> R Under development (unstable) (2024-02-21 r85967)
+#> Platform: x86_64-pc-linux-gnu
+#> Running under: Ubuntu 22.04.3 LTS
+#> 
+#> Matrix products: default
+#> BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 
+#> LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.20.so;  LAPACK version 3.10.0
+#> 
+#> locale:
+#>  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+#>  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+#>  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+#>  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+#>  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+#> [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+#> 
+#> time zone: Etc/UTC
+#> tzcode source: system (glibc)
+#> 
+#> attached base packages:
+#> [1] stats     graphics  grDevices utils     datasets  methods   base     
+#> 
+#> other attached packages:
+#> [1] muleaData_0.99.1     ExperimentHub_2.11.1 AnnotationHub_3.11.1
+#> [4] BiocFileCache_2.11.1 dbplyr_2.4.0         BiocGenerics_0.49.1 
+#> [7] BiocManager_1.30.22 
+#> 
+#> loaded via a namespace (and not attached):
+#>  [1] rappdirs_0.3.3          utf8_1.2.4              generics_0.1.3         
+#>  [4] bitops_1.0-7            BiocVersion_3.19.1      RSQLite_2.3.5          
+#>  [7] digest_0.6.34           magrittr_2.0.3          evaluate_0.23          
+#> [10] fastmap_1.1.1           blob_1.2.4              AnnotationDbi_1.65.2   
+#> [13] GenomeInfoDb_1.39.6     DBI_1.2.2               httr_1.4.7             
+#> [16] purrr_1.0.2             fansi_1.0.6             Biostrings_2.71.2      
+#> [19] cli_3.6.2               rlang_1.1.3             crayon_1.5.2           
+#> [22] XVector_0.43.1          Biobase_2.63.0          bit64_4.0.5            
+#> [25] withr_3.0.0             cachem_1.0.8            yaml_2.3.8             
+#> [28] tools_4.4.0             memoise_2.0.1           dplyr_1.1.4            
+#> [31] GenomeInfoDbData_1.2.11 filelock_1.0.3          curl_5.2.0             
+#> [34] mime_0.12               vctrs_0.6.5             R6_2.5.1               
+#> [37] png_0.1-8               stats4_4.4.0            lifecycle_1.0.4        
+#> [40] zlibbioc_1.49.0         KEGGREST_1.43.0         S4Vectors_0.41.3       
+#> [43] IRanges_2.37.1          bit_4.0.5               pkgconfig_2.0.3        
+#> [46] pillar_1.9.0            glue_1.7.0              xfun_0.42              
+#> [49] tibble_3.2.1            tidyselect_1.2.0        rstudioapi_0.15.0      
+#> [52] knitr_1.45              htmltools_0.5.7         rmarkdown_2.25         
+#> [55] compiler_4.4.0          RCurl_1.98-1.14
+```
+
+# Citation
 
 To cite package `muleaData` in publications use:
 
@@ -143,33 +345,3 @@ ExperimentalData Bioconductor Package for the mulea R Package, Contains
 Genes Sets for Functional Enrichment Analysis in GMT File Format. R
 package version 0.99.0,
 <https://github.com/ELTEbioinformatics/muleaData>.
-
-## Code of Conduct
-
-Please note that the `muleaData` project is released with a [Contributor
-Code of Conduct](http://bioconductor.org/about/code-of-conduct/). By
-contributing to this project, you agree to abide by its terms.
-
-## Development Tools
-
-- Continuous code testing is possible thanks to [GitHub
-  actions](https://www.tidyverse.org/blog/2020/04/usethis-1-6-0/)
-  through *[usethis](https://CRAN.R-project.org/package=usethis)*,
-  *[remotes](https://CRAN.R-project.org/package=remotes)*, and
-  *[rcmdcheck](https://CRAN.R-project.org/package=rcmdcheck)* customized
-  to use [Bioconductor’s docker
-  containers](https://www.bioconductor.org/help/docker/) and
-  *[BiocCheck](https://bioconductor.org/packages/3.18/BiocCheck)*.
-- Code coverage assessment is possible thanks to
-  [codecov](https://codecov.io/gh) and
-  *[covr](https://CRAN.R-project.org/package=covr)*.
-- The code is styled automatically thanks to
-  *[styler](https://CRAN.R-project.org/package=styler)*.
-- The documentation is formatted thanks to
-  *[devtools](https://CRAN.R-project.org/package=devtools)* and
-  *[roxygen2](https://CRAN.R-project.org/package=roxygen2)*.
-
-For more details, check the `dev` directory.
-
-This package was developed using
-*[biocthis](https://bioconductor.org/packages/3.18/biocthis)*.

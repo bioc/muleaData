@@ -1,2 +1,18 @@
 # Version 0.99.1 (2024-02-26)
 - NEWS file was created.
+
+muleaData provides pre-processed gene set (ontology) data for
+use with the `mulea` R package, a comprehensive tool
+for overrepresentation and functional enrichment analysis.
+`mulea` leverages ontologies (gene and protein sets) stored
+in the standardized Gene Matrix Transposed (GMT) format.
+We provide these GMT files for 27 different model organisms, ranging from
+*Escherichia coli* to human.
+These files are compiled from publicly available sources and include various
+gene and protein identifiers like 'UniProt' protein IDs,
+'Entrez', 'Gene Symbol', and 'Ensembl' gene IDs.
+The GMT files and the scripts we applied to create them are available at
+the 'ELTEbioinformatics/GMT_files_for_mulea' github repository.
+For the `muleaData` we read these GMT files with the
+`mulea::read_gmt()` function and saved them to
+*.rds* files with the standard R `saveRDS()` function.
