@@ -131,6 +131,10 @@ sessionInfo()
 
 To cite package `muleaData` in publications use:
 
-Ari E, Ölbei M, Gul L, Bohár B, Stirling T (2024). muleaData: ExperimentalData Bioconductor Package for the mulea R Package, Contains Genes Sets for Functional Enrichment Analysis in GMT File Format. R package version 0.99.0, [https://github.com/ELTEbioinformatics/muleaData](https://github.com/ELTEbioinformatics/muleaData).
+C. Turek, M. Olbei, T. Stirling, G. Fekete, E. Tasnadi, L. Gul, B. Bohar, 
+B. Papp, W. Jurkowski, E. Ari: 
+mulea - an R package for enrichment analysis using multiple ontologies and 
+empirical FDR correction. *bioRxiv* (2024),
+[doi:10.1101/2024.02.28.582444](https://doi.org/10.1101/2024.02.28.582444).
 
 
