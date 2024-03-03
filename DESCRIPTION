@@ -1,5 +1,6 @@
 Package: muleaData
-Title: Genes Sets for Functional Enrichment Analysis with the 'mulea' R Package
+Title: Genes Sets for Functional Enrichment Analysis with the 'mulea' R
+        Package
 Version: 0.99.1
 Date: 2023-11-20
 Authors@R: c(
@@ -16,12 +17,24 @@ Description: ExperimentHubData package for the 'mulea' comprehensive overreprese
 License: MIT + file LICENSE
 URL: https://github.com/ELTEbioinformatics/muleaData
 BugReports: https://support.bioconductor.org/tag/muleaData/issues
-biocViews: ExperimentData, ExperimentHub, Arabidopsis_thaliana_Data, Bacillus_subtilis_Data, Caenorhabditis_elegans_Data, Danio_rerio_Data, Drosophila_melanogaster_Data, Escherichia_coli_Data, Homo_sapiens_Data, Pan_troglodytes_Data, Pseudomonas_aeruginosa_Data, Rattus_norvegicus_Data, Saccharomyces_cerevisiae_Data, Staphylococcus_aureus_Data, ChIPSeqData, DNASeqData, ExpressionData, miRNAData
+biocViews: ExperimentData, ExperimentHub, Arabidopsis_thaliana_Data,
+        Bacillus_subtilis_Data, Caenorhabditis_elegans_Data,
+        Danio_rerio_Data, Drosophila_melanogaster_Data,
+        Escherichia_coli_Data, Homo_sapiens_Data, Pan_troglodytes_Data,
+        Pseudomonas_aeruginosa_Data, Rattus_norvegicus_Data,
+        Saccharomyces_cerevisiae_Data, Staphylococcus_aureus_Data,
+        ChIPSeqData, DNASeqData, ExpressionData, miRNAData
 BiocType: ExperimentData
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1
-Suggests: 
-    knitr,
-    rmarkdown
+Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
+NeedsCompilation: no
+Packaged: 2024-03-03 22:13:46 UTC; rstudio
+Author: Eszter Ari [aut, cre] (<https://orcid.org/0000-0001-7774-1067>),
+  Márton Ölbei [aut] (<https://orcid.org/0000-0002-4903-6237>),
+  Lejla Gul [aut],
+  Balázs Bohár [aut] (<https://orcid.org/0000-0002-3033-5448>),
+  Tamás Stirling [aut] (<https://orcid.org/0000-0002-8964-6443>)
+Maintainer: Eszter Ari <arieszter@gmail.com>

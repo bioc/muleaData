@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# muleaData
+# `muleaData` - GMT Datasets for the [`mulea`](https://github.com/ELTEbioinformatics/mulea) Package
 
 <!-- badges: start -->
 
@@ -278,7 +278,8 @@ mcols(muleaData) %>%
 # Creating a variable for the GMT data.frame of EH8735.
 # EH8735 contains small-scale measurement results, where the target genes are
 # coded with Ensembl ID-s
-Transcription_factor_TFLink_Caenorhabditis_elegans_SS_EnsemblID <- muleaData[["EH8735"]]
+Transcription_factor_TFLink_Caenorhabditis_elegans_SS_EnsemblID <- 
+  muleaData[["EH8735"]]
 #> see ?muleaData and browseVignettes('muleaData') for documentation
 #> loading from cache
 ```
@@ -325,7 +326,7 @@ sessionInfo()
 #> [22] XVector_0.43.1          Biobase_2.63.0          bit64_4.0.5            
 #> [25] withr_3.0.0             cachem_1.0.8            yaml_2.3.8             
 #> [28] tools_4.4.0             memoise_2.0.1           dplyr_1.1.4            
-#> [31] GenomeInfoDbData_1.2.11 filelock_1.0.3          curl_5.2.0             
+#> [31] GenomeInfoDbData_1.2.11 filelock_1.0.3          curl_5.2.1             
 #> [34] mime_0.12               vctrs_0.6.5             R6_2.5.1               
 #> [37] png_0.1-8               stats4_4.4.0            lifecycle_1.0.4        
 #> [40] zlibbioc_1.49.0         KEGGREST_1.43.0         S4Vectors_0.41.3       
@@ -340,8 +341,8 @@ sessionInfo()
 
 To cite package `muleaData` in publications use:
 
-C. Turek, M. Olbei, T. Stirling, G. Fekete, E. Tasnadi, L. Gul, B. Bohar, 
-B. Papp, W. Jurkowski, E. Ari: 
-mulea - an R package for enrichment analysis using multiple ontologies and 
-empirical FDR correction. *bioRxiv* (2024),
+C. Turek, M. Olbei, T. Stirling, G. Fekete, E. Tasnadi, L. Gul, B.
+Bohar, B. Papp, W. Jurkowski, E. Ari: mulea - an R package for
+enrichment analysis using multiple ontologies and empirical FDR
+correction. *bioRxiv* (2024),
 [doi:10.1101/2024.02.28.582444](https://doi.org/10.1101/2024.02.28.582444).
