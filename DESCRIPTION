@@ -4,7 +4,8 @@ Title: Genes Sets for Functional Enrichment Analysis with the 'mulea' R
 Version: 0.99.1
 Date: 2023-11-20
 Authors@R: c(
-              person("Eszter", "Ari", email = "arieszter@gmail.com", role = c("aut", "cre"),
+              person("Eszter", "Ari", email = "arieszter@gmail.com", 
+                     role = c("aut", "cre"),
                      comment = c(ORCID = "0000-0001-7774-1067")),
               person("Márton", "Ölbei", role = c("aut"),
                      comment = c(ORCID = "0000-0002-4903-6237")),
@@ -13,7 +14,13 @@ Authors@R: c(
                      comment = c(ORCID = "0000-0002-3033-5448")),
               person("Tamás", "Stirling", role = c("aut"),
                      comment = c(ORCID = "0000-0002-8964-6443")))
-Description: ExperimentHubData package for the 'mulea' comprehensive overrepresentation and functional enrichment analyser R package. Here we provide ontologies (gene sets) in a data.frame for 27 different organisms, ranging from Escherichia coli to human, all acquired from publicly available data sources. Each ontology is provided with multiple gene and protein identifiers. Please see the NEWS file for a list of changes in each version.
+Description: ExperimentHubData package for the 'mulea' comprehensive 
+        overrepresentation and functional enrichment analyser R package. 
+        Here we provide ontologies (gene sets) in a data.frame for 27 different
+        organisms, ranging from Escherichia coli to human, all acquired from
+        publicly available data sources. Each ontology is provided with
+        multiple gene and protein identifiers. Please see the NEWS file for a
+        list of changes in each version.
 License: MIT + file LICENSE
 URL: https://github.com/ELTEbioinformatics/muleaData
 BugReports: https://support.bioconductor.org/tag/muleaData/issues
@@ -31,10 +38,3 @@ RoxygenNote: 7.3.1
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2024-03-03 22:13:46 UTC; rstudio
-Author: Eszter Ari [aut, cre] (<https://orcid.org/0000-0001-7774-1067>),
-  Márton Ölbei [aut] (<https://orcid.org/0000-0002-4903-6237>),
-  Lejla Gul [aut],
-  Balázs Bohár [aut] (<https://orcid.org/0000-0002-3033-5448>),
-  Tamás Stirling [aut] (<https://orcid.org/0000-0002-8964-6443>)
-Maintainer: Eszter Ari <arieszter@gmail.com>

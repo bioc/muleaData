@@ -92,32 +92,10 @@ the `ExperimentHub` library using the following code:
 
 ``` r
 if (!require("BiocManager", quietly = TRUE))
-  install.packages("BiocManager")
-BiocManager::install(version = "3.19")
-#> 'getOption("repos")' replaces Bioconductor standard repositories, see
-#> 'help("repositories", package = "BiocManager")' for details.
-#> Replacement repositories:
-#>     CRAN: https://cloud.r-project.org
-#> Bioconductor version 3.19 (BiocManager 1.30.22), R Under development (unstable)
-#>   (2024-02-21 r85967)
-#> Installation paths not writeable, unable to update packages
-#>   path: /usr/local/lib/R/library
-#>   packages:
-#>     boot
+    install.packages("BiocManager")
 
 BiocManager::install("ExperimentHub")
-#> 'getOption("repos")' replaces Bioconductor standard repositories, see
-#> 'help("repositories", package = "BiocManager")' for details.
-#> Replacement repositories:
-#>     CRAN: https://cloud.r-project.org
-#> Bioconductor version 3.19 (BiocManager 1.30.22), R Under development (unstable)
-#>   (2024-02-21 r85967)
-#> Warning: package(s) not installed when version(s) same as or greater than current; use
-#>   `force = TRUE` to re-install: 'ExperimentHub'
-#> Installation paths not writeable, unable to update packages
-#>   path: /usr/local/lib/R/library
-#>   packages:
-#>     boot
+BiocManager::install("muleaData")
 ```
 
 # Example
@@ -155,7 +133,7 @@ muleaData <- query(eh, "muleaData")
 # Checking the muleaData variable.
 muleaData
 #> ExperimentHub with 879 records
-#> # snapshotDate(): 2024-02-26
+#> # snapshotDate(): 2024-03-06
 #> # $dataprovider: muleaData
 #> # $species: Drosophila melanogaster, Homo sapiens, Mus musculus, Caenorhabdi...
 #> # $rdataclass: data.frame
@@ -278,9 +256,23 @@ mcols(muleaData) %>%
 # Creating a variable for the GMT data.frame of EH8735.
 # EH8735 contains small-scale measurement results, where the target genes are
 # coded with Ensembl ID-s
-Transcription_factor_TFLink_Caenorhabditis_elegans_SS_EnsemblID <- 
-  muleaData[["EH8735"]]
-#> see ?muleaData and browseVignettes('muleaData') for documentation
+Transcription_factor_TFLink_Caenorhabditis_elegans_SS_EnsemblID <- muleaData[["EH8735"]]
+#> 'getOption("repos")' replaces Bioconductor standard repositories, see
+#> 'help("repositories", package = "BiocManager")' for details.
+#> Replacement repositories:
+#>     CRAN: https://cloud.r-project.org
+#> Bioconductor version 3.19 (BiocManager 1.30.22), R Under development (unstable)
+#>   (2024-02-21 r85967)
+#> Installing package(s) 'muleaData'
+#> Warning: package 'muleaData' is not available for Bioconductor version '3.19'
+#> 
+#> A version of this package for your version of R might be available elsewhere,
+#> see the ideas at
+#> https://cran.r-project.org/doc/manuals/r-devel/R-admin.html#Installing-packages
+#> Installation paths not writeable, unable to update packages
+#>   path: /usr/local/lib/R/library
+#>   packages:
+#>     boot
 #> loading from cache
 ```
 
@@ -311,16 +303,15 @@ sessionInfo()
 #> [1] stats     graphics  grDevices utils     datasets  methods   base     
 #> 
 #> other attached packages:
-#> [1] muleaData_0.99.1     ExperimentHub_2.11.1 AnnotationHub_3.11.1
-#> [4] BiocFileCache_2.11.1 dbplyr_2.4.0         BiocGenerics_0.49.1 
-#> [7] BiocManager_1.30.22 
+#> [1] ExperimentHub_2.11.1 AnnotationHub_3.11.1 BiocFileCache_2.11.1
+#> [4] dbplyr_2.4.0         BiocGenerics_0.49.1 
 #> 
 #> loaded via a namespace (and not attached):
 #>  [1] rappdirs_0.3.3          utf8_1.2.4              generics_0.1.3         
-#>  [4] bitops_1.0-7            BiocVersion_3.19.1      RSQLite_2.3.5          
-#>  [7] digest_0.6.34           magrittr_2.0.3          evaluate_0.23          
-#> [10] fastmap_1.1.1           blob_1.2.4              AnnotationDbi_1.65.2   
-#> [13] GenomeInfoDb_1.39.6     DBI_1.2.2               httr_1.4.7             
+#>  [4] BiocVersion_3.19.1      RSQLite_2.3.5           digest_0.6.34          
+#>  [7] magrittr_2.0.3          evaluate_0.23           fastmap_1.1.1          
+#> [10] blob_1.2.4              AnnotationDbi_1.65.2    GenomeInfoDb_1.39.7    
+#> [13] DBI_1.2.2               BiocManager_1.30.22     httr_1.4.7             
 #> [16] purrr_1.0.2             fansi_1.0.6             Biostrings_2.71.2      
 #> [19] cli_3.6.2               rlang_1.1.3             crayon_1.5.2           
 #> [22] XVector_0.43.1          Biobase_2.63.0          bit64_4.0.5            
@@ -329,12 +320,12 @@ sessionInfo()
 #> [31] GenomeInfoDbData_1.2.11 filelock_1.0.3          curl_5.2.1             
 #> [34] mime_0.12               vctrs_0.6.5             R6_2.5.1               
 #> [37] png_0.1-8               stats4_4.4.0            lifecycle_1.0.4        
-#> [40] zlibbioc_1.49.0         KEGGREST_1.43.0         S4Vectors_0.41.3       
+#> [40] zlibbioc_1.49.0         KEGGREST_1.43.0         S4Vectors_0.41.4       
 #> [43] IRanges_2.37.1          bit_4.0.5               pkgconfig_2.0.3        
 #> [46] pillar_1.9.0            glue_1.7.0              xfun_0.42              
 #> [49] tibble_3.2.1            tidyselect_1.2.0        rstudioapi_0.15.0      
-#> [52] knitr_1.45              htmltools_0.5.7         rmarkdown_2.25         
-#> [55] compiler_4.4.0          RCurl_1.98-1.14
+#> [52] knitr_1.45              htmltools_0.5.7         rmarkdown_2.26         
+#> [55] compiler_4.4.0
 ```
 
 # Citation
