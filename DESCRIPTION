@@ -1,7 +1,7 @@
 Package: muleaData
 Title: Genes Sets for Functional Enrichment Analysis with the 'mulea' R
         Package
-Version: 0.99.1
+Version: 1.0.0
 Date: 2023-11-20
 Authors@R: c(
               person("Eszter", "Ari", email = "arieszter@gmail.com", 
